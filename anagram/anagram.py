@@ -18,4 +18,4 @@ with open("worddb.txt", "r") as database:
             		clean=word.rstrip()
             		outputs.append(clean)
 #            		print word
-print 'here are your anagrams: '+', '.join(outputs)
+print 'Your anagram/s: '+', '.join(outputs)
