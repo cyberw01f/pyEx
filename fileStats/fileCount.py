@@ -16,6 +16,7 @@ def counter(fileLoc):
     vfiles=0
     afiles=0
     pfiles=0
+    total=1
     for (dir, _, files) in os.walk(fileLoc):
         for f in files:
             if f[-3:] in videoFiles:
@@ -24,9 +25,12 @@ def counter(fileLoc):
                 afiles=afiles+1
             elif f[-3:] in pdfFiles:
                 pfiles=pfiles+1
-    print "Number of Video File = ",vfiles,"\nNumber of Audio Files = ",afiles,"\nNumber of PDF = ",pfiles
+    total=vfiles+afiles+pfiles
+    print "Number of Video File =" ,vfiles,"\nNumber of Audio Files = ",afiles,"\nNumber of PDF = ",pfiles,"\nTotal number of files = ",total,"\n"
+    print "=" *(vfiles*10/total)
+    print "=" *(afiles*10/total)
+    print "=" *(pfiles*10/total)
     return
-
 
 while 1:
     fileLoc=raw_input("Enter location to search [exit to quit]\n>>")
