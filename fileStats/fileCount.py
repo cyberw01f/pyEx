@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # Copyright (c) 2017 Abhineet Dubey. All rights reserved.
 # Use of this source code is governed by the GPLv3 license that can be
 # found in the LICENSE file.
@@ -6,6 +6,7 @@
 #under construction
 
 import os
+import math
 
 videoFiles = ['mkv','mp4','avi','MP4','MKV','AVI','ogv','OGV']
 audioFiles = ['mp3','aac','m4a','flac','ogg','MP3','AAC','M4A','FLAC','OGG']
@@ -26,14 +27,14 @@ def counter(fileLoc):
             elif f[-3:] in pdfFiles:
                 pfiles=pfiles+1
     total=vfiles+afiles+pfiles
-    print "Number of Video File =" ,vfiles,"\nNumber of Audio Files = ",afiles,"\nNumber of PDF = ",pfiles,"\nTotal number of files = ",total,"\n"
-    print "=" *(vfiles*10/total)
-    print "=" *(afiles*10/total)
-    print "=" *(pfiles*10/total)
+    print ("Number of Video File =",vfiles,"\nNumber of Audio Files = ",afiles,"\nNumber of PDF = ",pfiles,"\nTotal number of files = ",total)
+    print ("=" *math.ceil(vfiles*10/total))
+    print ("=" *math.ceil(afiles*10/total))
+    print ("=" *math.ceil(pfiles*10/total))
     return
 
 while 1:
-    fileLoc=raw_input("Enter location to search [exit to quit]\n>>")
+    fileLoc=input("Enter location to search [exit to quit]\n>>")
     if fileLoc=='exit':
         break
     else:
